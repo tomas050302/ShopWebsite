@@ -1,0 +1,2 @@
+<?php
+$nOfImagesInHomePage = 5;
