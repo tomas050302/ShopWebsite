@@ -7,7 +7,7 @@ $command = 'SELECT name, description, dir_img FROM product WHERE state=1;';
 $result = query($command);
 
 foreach ($result as $key => $line) {
-  if ($key <= $nOfImagesInHomePage) {
+  if ($key <= $nOfImagesInHomePage - 1) {
     echo ('
           <li> 
             <img src="images/' . $line['dir_img'] . '" alt="">

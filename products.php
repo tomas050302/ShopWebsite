@@ -7,6 +7,7 @@
   <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
   <link rel="stylesheet" type="text/css" media="screen" href="menu/css/simple_menu.css">
   <link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="./css/main.css">
   <!-- JS Files -->
   <script src="js/jquery.min.js"></script>
   <script src="js/custom.js"></script>
@@ -34,10 +35,19 @@
     <!-- Main Menu -->
     <ol id="menu">
       <li><a href="index.html">Home</a></li>
-      <li><a href="products.html">Products</a></li>
+      <li><a href="products.php">Products</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ol>
   </div>
+  <form action=<?php
+                echo ('"?idFamily=' . $idFamily || 0 . '"')
+                ?>>
+    <select name="idFamily" id="familiesSelect">
+      <option value="">-- Select a family --</option>
+      <?php require('./php/buildFamilySelect.php'); ?>
+    </select>
+    <input type="submit" value="Search">
+  </form>
   <div id="container">
     <div id="portfolio">
       <ul id="filterable">
