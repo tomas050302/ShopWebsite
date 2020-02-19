@@ -44,3 +44,13 @@
   width: 180px;
   text-align: center;
 }
+
+.familiesContainer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 3%;
+}
+
+.family {
+  color: #333;
+}

@@ -4,6 +4,7 @@ require('lib/config.php');
 $command = 'SELECT idFamily, name FROM family;';
 $result = query($command);
 
+echo ('<a class="family" href="?">Any</a>');
 foreach ($result as $key => $line) {
-  echo ('<option value=' . $line['idFamily'] . '>' . $line['name'] . '</option>');
+  echo ('<a class="family" href="?idFamily=' . $line['idFamily'] . '">' . $line['name'] . '</a>');
 }

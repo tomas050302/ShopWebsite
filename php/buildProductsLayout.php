@@ -2,7 +2,11 @@
 require_once('lib/config.php');
 require_once('config/config.php');
 
-$command = 'SELECT idProduct, name, description, dir_img FROM product WHERE state = 1;';
+if (isset($_GET['idFamily'])) {
+  $command = 'SELECT idProduct, name, description, dir_img FROM product WHERE state = 1 AND idFamily=' . $_GET['idFamily'] . ';';
+} else {
+  $command = 'SELECT idProduct, name, description, dir_img FROM product WHERE state = 1;';
+}
 $result = query($command);
 
 foreach ($result as $key => $line) {

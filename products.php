@@ -39,14 +39,9 @@
       <li><a href="contact.html">Contact</a></li>
     </ol>
   </div>
-  <form action=<?php
-                echo ('"?idFamily=' . $idFamily || 0 . '"')
-                ?>>
-    <select name="idFamily" id="familiesSelect">
-      <option value="">-- Select a family --</option>
-      <?php require('./php/buildFamilySelect.php'); ?>
-    </select>
-    <input type="submit" value="Search">
+  <div class="familiesContainer">
+    <?php require('./php/buildFamilySelect.php'); ?>
+  </div>
   </form>
   <div id="container">
     <div id="portfolio">
