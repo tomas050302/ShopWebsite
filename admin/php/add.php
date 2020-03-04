@@ -13,7 +13,7 @@
   <?php
   $table = $_GET['table'];
   ?>
-  <form action="handleAdd.php?table=<?php echo $table ?>" method="post">
+  <form action="handleAdd.php?table=<?php echo $table ?>" method="post" enctype="multipart/form-data">
     <?php
     if ($table == 'product') {
       require('../../php/lib/config.php');
@@ -33,7 +33,7 @@
       echo ('<input type="number" name="price"></input><br>');
       echo ('<label for="photo">Photo</label>');
       echo ('<input type="file" name="photo"></input><br>');
-      echo ('<select>
+      echo ('<select name="idFamily">
         ' . $familiesSelect . '
       </select><br>');
     } else if ($table == 'family') {

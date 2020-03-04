@@ -10,12 +10,16 @@
 </head>
 
 <body>
-  <form action="handleUpdate.php" method="post">
+  <form action="handleUpdate.php" method="post" enctype="multipart/form-data">
     <?php
     require('../../php/lib/config.php');
 
     $table = $_GET['table'];
-    $command = 'SELECT * FROM ' . $table . ';';
+    $primaryKey = $table == 'product' ? 'idProduct' : 'idFamily';
+
+    $id = $_GET['id'];
+
+    $command = 'SELECT * FROM ' . $table . ' WHERE ' . $primaryKey . '=' . $id . ';';
     $result = mysqli_fetch_array(query($command));
 
     if ($table == 'family') {
@@ -34,28 +38,27 @@
         <input type="hidden" name="idProduct" value=' . $result['idProduct'] . '></input>
         <input type="hidden" name="table" value= ' . $table . '></input>
         <label for="name">Name</label>
-        <input type="text" name="name" value=' . $result['name'] . '></input>
+        <input type="text" name="name" value="' . $result['name'] . '"></input>
         <label for="description">Description</label>
-        <input type="text" name="description" value=' . $result['description'] . '></input>
+        <input type="text" name="description" value="' . $result['description'] . '"></input>
         <label for="price">Price</label>
         <input type="number" name="price" value=' . $result['price'] . '></input>
         <label for="image">Image</label>
-        <input type="file" name="photo" value=' . $result['dir_img'] . '></input>
-        <select>
+        <input type="file" name="photo" value="' . $result['dir_img'] . '"></input>
+        <select name="idFamily">
       ');
       $command = 'SELECT * FROM family';
       $familyResult = query($command);
       $familiesSelect = '<option value="">--Select a Family--</option>';
 
       foreach ($familyResult as $key => $line) {
-        echo ($key);
-        if ($key + 1 == $result['idFamily']) {
-          $familiesSelect .= '<option value=' . $line['idFamily'] . ' default>' . $line['name'] . '</option>';
+        if ($line['idFamily'] == $result['idFamily']) {
+          $familiesSelect .= '<option value="' . $line['idFamily'] . '" selected="selected">' . $line['name'] . '</option>';
         } else {
-          $familiesSelect .= '<option value=' . $line['idFamily'] . '>' . $line['name'] . '</option>';
+          $familiesSelect .= '<option value="' . $line['idFamily'] . '">' . $line['name'] . '</option>';
         }
       }
-      echo ($familiesSelect . '</select>');
+      echo ($familiesSelect . '</select><br>');
     }
 
     echo ('<input type="submit" class="submitBtn" value="Salvar"></input>')

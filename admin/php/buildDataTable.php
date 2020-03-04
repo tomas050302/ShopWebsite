@@ -26,8 +26,8 @@ foreach ($result as $key => $line) {
         <td class="centered"><img src="../../images/' . $line['dir_img'] . '"/></td>
         <td class="centered"><span>' . $family . '</span></td>
         <td class="centered"><span>' . $line['state'] . '</span></td>
-        <td class="centered"><a href="../php/edit.php?table=' . $table . '&id=' . $line['idProduct'] . '" class="delete"><i class="fas fa-edit">Edit</i></a></td>
-        <td class="centered"><a href="../php/deleteFromTable.php?table=' . $table . '&id=' . $line['idProduct'] . '" onclick="return confirm(\'Are you sure you want to delete this record?\');"><i class="fas fa-trash">Delete</i></a></td>
+        <td class="centered"><a href="../php/edit.php?table=' . $table . '&id=' . $line['idProduct'] . '" class="delete"><i class="fas fa-edit"></i></a></td>
+        <td class="centered"><a href="../php/deleteFromTable.php?table=' . $table . '&id=' . $line['idProduct'] . '" onclick="return confirm(\'Are you sure you want to delete this record?\');"><i class="fas fa-trash"></i></a></td>
       </tr>
     ');
   } else if ($table == 'family') {

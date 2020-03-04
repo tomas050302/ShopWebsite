@@ -22,3 +22,10 @@ function numRows($query)
 {
   return mysqli_num_rows($query);
 }
+
+function isPhoto($file)
+{
+  $acceptedTypes = array('image/jpeg', 'image/jpg', 'image/png');
+
+  return in_array($file['type'], $acceptedTypes);
+}
