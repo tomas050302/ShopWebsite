@@ -40,8 +40,8 @@
 
 #familiesSelect {
   float: right;
-  margin: 1% 13%;
-  width: 180px;
+  margin: 1% 12%;
+  width: 200px;
   text-align: center;
 }
 
@@ -53,4 +53,9 @@
 
 .family {
   color: #333;
+}
+
+.familyHeader {
+  font-size: 22px;
+  margin-top: 1%;
 }

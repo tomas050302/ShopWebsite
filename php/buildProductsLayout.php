@@ -16,7 +16,7 @@ foreach ($result as $key => $line) {
       <p><a href="productTemplate.php?id=' . $line['idProduct'] . '"><img src="images/' . $line['dir_img'] . '" alt="" width="210" height="145" class="portfolio-img pretty-box"></a> </p>
       <h4><a href="">' . $line['name'] . '</a></h4>
       <p>' . $line['description'] . '</p>
-    </li>
+    </li>ouse SteelSeries
   ');
   }
 }
