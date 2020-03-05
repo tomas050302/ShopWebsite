@@ -29,7 +29,6 @@ $oldFileName = mysqli_fetch_array(query($tempSelect))['dir_img'];
 unlink($dir_site . 'images/' . $oldFileName);
 copy($photo['tmp_name'], $fullDir);
 
-die;
 if (query($command)) {
   echo ('<h1>Event Updated successfully</h1>');
   header("Refresh:.5; url=../pages/manage.php?table=" . $table);

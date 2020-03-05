@@ -1,4 +1,6 @@
-<?php require('../lib/auth.inc.php'); ?>
+<?php require('../lib/auth.inc.php');
+$table = $_GET['table'];
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +11,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/manage.css">
-  <title>Manage Families</title>
+  <title>Manage <?php echo $table ?></title>
 </head>
 
 <body>
@@ -17,7 +19,7 @@
     <?php
     require('../../php/lib/config.php');
 
-    $table = $_GET['table'];
+
 
     if ($table == 'family') {
       echo ('
